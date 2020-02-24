@@ -1,19 +1,3 @@
-echo "Starting to Configure PC"
-
-echo "Show Hidden Files"
-reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden /t REG_DWORD /d 0x1 /f
-reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden
-
-echo "Show Files Extension"
-reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x0 /f
-reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt
-
-echo "Setting Execution Policy For Chocolatey"
-Get-ExecutionPolicy
-Set-ExecutionPolicy AllSigned -Force
-
-echo "Remove Bloatware Windows 10"
-
 # This script de-bloats unwanted apps from Windows 10.
 # To keep certain apps insert a '#' at the beginning of the line 
 # and it will be skipped. 
@@ -161,3 +145,36 @@ foreach ($app in $UserApps) {
 
     Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers
 }
+
+# SIG # Begin signature block
+# MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
+# gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU3VCGiPPqNiPxiUHdBcI39mYY
+# bJWgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
+# MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
+# ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
+# ohZJVI4JzKv4sA0EzqfSmyjt1lqdAKY/G2ZwTJpt4JYRw5FFHIwNQDpUDZN539Bl
+# ufBvxcP1/kc7eD2zp6b24AnzTPi+o80vHhhNnFja90pz/Y2+nAfwPUVcf+hK+Ve1
+# pS35xuQFv9jsJZlP+8FqeVzPdtiaPJaCmNtqJf7CZkbtPQ4wbjQ83K+cv8NUdhbI
+# lXLutbPj5b2CV7gQUAPPvqDFvXWfCLgdDCxB0CgsbB8rpb/2q0H4CYCzAZiLrdsK
+# dRI7BwxxaV3h2Ofn2fIFLwn+HTqW9xdpkUa4qrWSOFGCMIhy4sLscOLAR6rFM/9H
+# 92UjKWlxIM6ZAgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggr
+# BgEFBQcDAzAdBgNVHQ4EFgQUmZPngYXsl6R7/c1/CxbfELyzJrQwDQYJKoZIhvcN
+# AQEFBQADggEBAFufz2aQYAsraF5TqP+A5O/TnV26uF/rumsrpnh+cpAETiR1cqR5
+# K/eJ4yoSxnCLbGmC46a/+Diif6Sac7VoHB4JyuGSlhfN89Cck6+pY56zKDDbN5NM
+# ukPcyw+jfAr4KW+O3WdIn/xDzlraWdsvALencuNKOjCGOFoXMAv4NHYyeJ7PzV5D
+# HypF6YzWbKdTb+zS6f6BzedcIDrx0i4MmKqW2yw1pXfC82y1iENl5booMD2iuWG6
+# XVSg5Nex4zvEP7LMkoP/jihzZvcNaVBs8QH76MIULM1DzF2uby2HeEoBiM+1GhJ1
+# N99In5Rr7gGltEL6mb8G12xyl2IWq5ismpYxggHVMIIB0QIBATA0MCAxHjAcBgNV
+# BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
+# DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
+# DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
+# hkiG9w0BCQQxFgQUqzYZln+opk6XOEce7KGh9s+om5IwDQYJKoZIhvcNAQEBBQAE
+# ggEAImV13hUNnD0tA2UN8MRzadl/l+70/dBHR4xJFL80j7DIY+7zpL3UWUmvFvlw
+# B37/Nw+Te9fI7OuQXdrzpFnVvW+/IkMTzZb2HXaO28vyO+D9oEv46WZnPJQhSv11
+# NL0dEqsnCIN/hao6/mPCImoGBadsWojTHEX3RxV5/YtfE7ZcTNi0CZ5yCSb5KWKa
+# lwuXsr6WBrAIdHkgRocRUBOyzig0gt25qf/5byJ+u3hrsSqf0E+2FedVQbQ/CcNw
+# xhWH1VmoAoxQG0pxA5Og1SZxKPHXOxJTHOVK4/YzsMJitx/iT2RXeJU+j4R0uFy2
+# KXXaNUB/d8NHuML8i+cydRU06g==
+# SIG # End signature block
