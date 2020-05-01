@@ -26,29 +26,29 @@ powershell -File ".\programs.ps1"
 echo "Starting VsCode Script"
 powershell -File ".\vscode.ps1"
 
-echo "Starting UpWorkTimer Script"
-powershell -File ".\aws.ps1"
+#echo "Starting UpWorkTimer Script"
+#powershell -File ".\aws.ps1"
 
-echo "Starting UpWorkTimer Script"
-powershell -File ".\upworktimer.ps1"
+#echo "Starting UpWorkTimer Script"
+#powershell -File ".\upworktimer.ps1"
 
-echo "Starting Vagrant Script"
-powershell -File ".\vagrant.ps1" $virtualFolder
+#echo "Starting Vagrant Script"
+#powershell -File ".\vagrant.ps1" $virtualFolder
 
-echo "Starting Virtualbox Script"
-powershell -File ".\virtualbox.ps1" $virtualFolder
+#echo "Starting Virtualbox Script"
+#powershell -File ".\virtualbox.ps1" $virtualFolder
 
-echo "Starting Docker Script"
-powershell -File ".\docker.ps1"
+#echo "Starting Docker Script"
+#powershell -File ".\docker.ps1"
 
-echo "Installing Geforce Experience"
-choco install geforce-experience -y
+#echo "Installing Geforce Experience"
+#choco install geforce-experience -y
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUYnvxDnw27bcgWCxoPfS91o1E
-# WtqgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUJq205b7BTZJMai/GJSlmD8E8
+# qn2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -68,11 +68,11 @@ choco install geforce-experience -y
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUn6jQlcvnsAWuVmFzbN4uXj1ACoIwDQYJKoZIhvcNAQEBBQAE
-# ggEAp8GwdKkhdfJgmbSSK87ex85ma8VjSWPY2jzDpzFc5GYBGJgVewU84/KA8pVw
-# 4glAwIxqPR1aA0TpBYZSFGVSSBPeIOSothHMAfXQkd17CZp5e5kXseXCdTarLKca
-# q1HVBJPBA7uK8XiYI3rQ8Jf5wJwjGBoKDJGq2MLB5FfJ1HbbmvZZ4Mxvsg6gzZ7y
-# 70/uBoUPenZHvejYQ1rrR4LpgSzNUGgqoF8OpmyG7zCFYh3YZBTBCkXaHUutmu3C
-# vQaixSUbbhXIOPcqt+DURTSGk3/kv+hlrTBIvhTCEFT2M4pjZWuzwUU3QXiCzlAb
-# qX8jWlM6sy5WTPtDPdJsQPucKg==
+# hkiG9w0BCQQxFgQUeTt8c5K5BVtV7oVauJ7ct3zKqvowDQYJKoZIhvcNAQEBBQAE
+# ggEAD83MaiAuTekpOCM9EIS0m40jyAAP48CWdcvbnVWthrrVQiBAMpQWqSOq45aK
+# vd1rok7uOAREtgFpN5qOQ1I0n8rnvWZ7wId0TeKewa7S/ol68xLwzLUWVS33WDhg
+# /UCp69dTIdVnwCDTC6tSdvvLt71ZLngD6K81tXqDlL9ds0eFYNGf1GgrykykMUYH
+# djm+L3CpXBRD/vgc/NhiaRzECa2eFbf8KAcCirfCsu492ytXSRbyB4BhhF6Ksg4x
+# 7YcYVZjuPLqHR5GKt8jsSj7A+6lqMIV9Gt9TcT2K4BwXtZLiK0SR911PsygKPBLc
+# Croo/MY1X4+g4QdlkaiE3c7qzw==
 # SIG # End signature block
