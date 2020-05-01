@@ -1,22 +1,18 @@
-﻿echo "Installation Node"
-choco install -y nodejs.install
-choco install -y python2
-choco install -y yarn
-choco install -y microsoft-build-tools-2013
+﻿echo "Downloading Upwork Timer"
+cd ~
+wget https://updates-desktopapp.upwork.com/binaries/v5_3_3_871_51d563431f844aff/UpworkSetup64.exe -OutFile UpworkSetup64.exe
 
-echo "Packages And Configuration"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
-#npm install --global --production windows-build-tools
-#npm config set msvs_version 2015 --global
-#npm config set python python2.7
-npm install -g http-server
-npm install -g electron
+echo "Installing UpWork Timer"
+Start-Process -Wait -FilePath .\UpworkSetup64.exe -ArgumentList '/S','/v','/qn' -passthru
+
+echo "Removing Installation App"
+rm .\UpworkSetup64.exe
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUNURnp7gMy+JSRjbfEeYetm/0
-# FQegggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU229mpSLtlf8VvsmKNoF12rXN
+# 6nagggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -36,11 +32,11 @@ npm install -g electron
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUqxoqSWqnVdvV+LEaCNQ6v/2rEA8wDQYJKoZIhvcNAQEBBQAE
-# ggEAF335Vb/oS9JMw+ZcnfFQTYmtbCxZ5Ri3KDpshm4oOJPlM+tJaY9EuZtjMmv7
-# 5CiwqYq9KYtx7FVXe50yia3Y874QJ9hCh8rgDab0dB87TGE2oxkwuods7dvVxm9v
-# oTMWpj4zb7F8CaWs92VJvXzoqok5Ym+mAisUrSMhiiZ0NNf8rw0jRYtX48AexAqE
-# 9vRlNT7GJsH8wTEaYbXH7rl00tCljkbhthipvfbORYRsSpTR6rsITXIhmhSazNQb
-# uO3wez9X3XunwlvwBVZY1lIhvWCpGBSAn5IA/fl7/6GTucYPPAYT3XYLUKj568g2
-# bU418D/l6LI213RSAJQ33iEWBA==
+# hkiG9w0BCQQxFgQUIR9p7QeA+xmglG+ttH0iVokEfKYwDQYJKoZIhvcNAQEBBQAE
+# ggEALc5PMR+HM7YI9RQRNLXyue/i2rC/M7eXuFlCSI25zsXwoOQsMoKW2FcaOwgN
+# me6xz+VqpNymAv0vxg46xh/lCdzROjXLo0n6NuPrT0Hite6sWqe7trPcWa5KT5RR
+# D4j4H0wbP/8rPEh+TCmop1NmjwoTPQWCswRUN+/eN2cryQPlhcMUaELhqRcFCRvy
+# S222AZ3UtRkHUycrIzNTv+4yCgDFfQyKfg0+QMV9nf2NPpOJadd2r4B3S7IiycBr
+# 7sjiRx+Bxm8CGmQo2J4ku7Ud0NUlSyIDdUJ5r4+pcdlUyujRa9lEpIjmpQD4Tgf7
+# BluE0dQkPsi8oyCKqySHb36G7g==
 # SIG # End signature block

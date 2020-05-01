@@ -3,17 +3,19 @@ choco install visualstudiocode -y
 
 echo "VSCode 3rd Party Integration Extensions"
 code --install-extension icrawl.discord-vscode
-code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension auchenberg.vscode-browser-preview
 code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
 code --install-extension eg2.vscode-npm-script
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-azuretools.vscode-docker
 echo "VSCode MarkDown Extensions"
 code --install-extension bierner.markdown-preview-github-styles
 echo "VSCode Themes Extensions"
 code --install-extension dracula-theme.theme-dracula
-code --install-extension gerane.Theme-Dark-Dracula
-code --install-extension PKief.material-icon-theme
+code --install-extension gerane.theme-dark-dracula
+code --install-extension pkief.material-icon-theme
 code --install-extension CoenraadS.bracket-pair-colorizer
 echo "VSCode Intellisense Extensions"
 code --install-extension kamikillerto.vscode-colorize
@@ -22,17 +24,20 @@ code --install-extension steoates.autoimport
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension alefragnani.Bookmarks
 code --install-extension dbaeumer.vscode-eslint
-code --install-extension capaj.vscode-standardjs-snippets
 code --install-extension redhat.vscode-yaml
 code --install-extension esbenp.prettier-vscode
 code --install-extension editorconfig.editorconfig
 echo "VSCode Chrome Debugger"
 code --install-extension msjsdiag.debugger-for-chrome
+
+echo "Update Settings.json"
+cp .\cfg\settings.json $HOME\AppData\Roaming\Code\User\settings.json
+
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUHM0KnVpEdxTlUvT3NXhFV2uE
-# zFKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUIiDvEx9APxoGiu2hCHAMl4j6
+# +B2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -52,11 +57,11 @@ code --install-extension msjsdiag.debugger-for-chrome
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUhTQGnDLcsDM61dsyrRKF35/OJN8wDQYJKoZIhvcNAQEBBQAE
-# ggEAi7Lm5f2iyfVGIsa7BOICGDwORYgxV32TAR/uc6ivqDVeq8o7bQwft7MI/LFw
-# q2taPN8oC3+M7htPtBg6+Lp1Uw/4AcHsEV9NYn1reh4lnpDmODRkfpGYJlZ6MQ4X
-# 6sQnOAinqmbaHWp1qTnM5Yjeo7mxYCyUCDHDo59AdUfzV4DjKMjkNYPr1NXcbYHl
-# acdM4wWBeWyiNz8AjyA5JOOYa8vFnrqpAI5FY9rYOp6dRRf4U9jYu1ZKctNluLRx
-# T7HYn7nzKcEghoTT2XsB04VU1XOvE6cPaLOqZzqFoJeFdNHEiT1MjTIF+Yt+x+bz
-# f0UaE7vA24JGtADhCahuVvKR7w==
+# hkiG9w0BCQQxFgQUsOferKwvJKonlk7Vsd5k/l64MlswDQYJKoZIhvcNAQEBBQAE
+# ggEAFMtkXaLlDHQhosEPrjwU8bDj6ZBSHPiefLqrnBwlMSKzvWXA6VP3R820PkQ5
+# EZsI3wz1X2cON2C4T+liOqlKNvCMCcm26Tna4meFW/IuS2HuHsohc+DjhYoyHFjY
+# OpiPwY3HasigR9EjQk6y5/JRTLwTHO2dfEZC68ptwf0+ULPyBw06BOLV9OSJ1EOI
+# o7fzOimlUpwed1nKHfrwuyDyCFiWx2JhrT0FOdiTrzQi5PZQuGRKetA9wf6mzBIT
+# jtY2BtCRVs58Ca/Rbcsm3IFmPcu3X8TvuXnKv4j21aLBxmFffOw2vb63bKvZn5Bv
+# QvJNUqhPDigvnIk7usSIiyecsg==
 # SIG # End signature block

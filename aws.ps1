@@ -1,22 +1,14 @@
-﻿echo "Installation Node"
-choco install -y nodejs.install
-choco install -y python2
-choco install -y yarn
-choco install -y microsoft-build-tools-2013
+﻿echo "Installing AWS"
+choco install awscli -y
 
-echo "Packages And Configuration"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
-#npm install --global --production windows-build-tools
-#npm config set msvs_version 2015 --global
-#npm config set python python2.7
-npm install -g http-server
-npm install -g electron
+echo "Configure AWS"
+cp $env:OneDrive\keys\.aws $HOME\.aws -r
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUNURnp7gMy+JSRjbfEeYetm/0
-# FQegggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUESj/NFQFWggNMl9Tb1SqEs1M
+# zFKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -36,11 +28,11 @@ npm install -g electron
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUqxoqSWqnVdvV+LEaCNQ6v/2rEA8wDQYJKoZIhvcNAQEBBQAE
-# ggEAF335Vb/oS9JMw+ZcnfFQTYmtbCxZ5Ri3KDpshm4oOJPlM+tJaY9EuZtjMmv7
-# 5CiwqYq9KYtx7FVXe50yia3Y874QJ9hCh8rgDab0dB87TGE2oxkwuods7dvVxm9v
-# oTMWpj4zb7F8CaWs92VJvXzoqok5Ym+mAisUrSMhiiZ0NNf8rw0jRYtX48AexAqE
-# 9vRlNT7GJsH8wTEaYbXH7rl00tCljkbhthipvfbORYRsSpTR6rsITXIhmhSazNQb
-# uO3wez9X3XunwlvwBVZY1lIhvWCpGBSAn5IA/fl7/6GTucYPPAYT3XYLUKj568g2
-# bU418D/l6LI213RSAJQ33iEWBA==
+# hkiG9w0BCQQxFgQUkTfbEeUlTarFJ9qczRIF0ZETR+wwDQYJKoZIhvcNAQEBBQAE
+# ggEAlo3N++8Li+sEb8f3ULhK11iXwRlYhIY9N7+su1sd2yP0k0Fa+3vwVtsl/rU+
+# pl/uNAIIHUFe7tZG/aoc/b8U92550DalTeex/uhLX/JYyTJTDTWhxuuc75wcg5Ch
+# 3CAF1IOHYKJM+ogCd2zJ7sW4l+7Mi47lr+opadBtAeat+gEQtLDjbHaoanHhV/dn
+# q7EKE157W4/lFxIkFXo4D7s75cBZlEAVW2idjVvz6pOCEl5ldNRy6c4YiYJk8kGg
+# x2RDl0EQg3c8mr+edt5ioVKDOyt3+gcoz9SSqRdEN90p9GhcFEvCYtv97ZEnx6vA
+# SMEnyUpkHbOTpSvfp5phtCUm8g==
 # SIG # End signature block

@@ -1,4 +1,4 @@
-﻿param([String] $UserName, [String] $UserEmail, [String] $PrivateKey, [String] $PublicKey, [String] $KeyPairName)
+﻿param([String] $UserName, [String] $UserEmail)
 
 echo "Installing GIT"
 choco install git.install -y
@@ -7,42 +7,27 @@ echo "Configuring GIT"
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 git config --global user.name $UserName
 git config --global user.email $UserEmail
+git config --global core.fileMode false
+git config --global core.autocrlf false
 git config --list
 
 echo "Installing Github Desktop"
 choco install github-desktop -y
 
-echo "Enable SSH Service"
-Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
-Start-Service ssh-agent
+echo "Installing Git Completion for PowerShell"
+choco install poshgit -y
 
-#echo "Generating SSH Key"
-#ssh-keygen -t rsa -b 4096 -C $UserEmail
-#ssh-add
-
+#Windows SSH Key Must Be id_rsa or will fail with permission denied
 echo "Saving SSH Key"
 md $HOME/.ssh
-cp $PrivateKey $HOME/.ssh
-cp $PublicKey $HOME/.ssh
-ssh-add $HOME/.ssh/$KeyPairName
-
-echo "Check Gits Connection"
-ssh-keyscan -H gitlab.com >> $HOME/.ssh/known_hosts
-ssh -T git@gitlab.com
-ssh-keyscan -H github.com >> $HOME/.ssh/known_hosts
-ssh -T git@github.com
-
-echo "Setting KeyPairName into Environment Variable GIT_PAIRKEY"
-[Environment]::SetEnvironmentVariable("GIT_PAIRKEY", $KeyPairName, "User")
-
-Add-Content $HOME\.bash_profile 'eval $(ssh-agent -s)'
-Add-Content $HOME\.bash_profile 'ssh-add $HOME/.ssh/$GIT_PAIRKEY'
+cp $env:OneDrive\keys\git\id_rsa $HOME\.ssh\id_rsa
+cp $env:OneDrive\keys\git\id_rsa.pub $HOME\.ssh\id_rsa.pub
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUDTnGTccvpRS/xz5dGTafgds8
-# EE+gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUsWnZX6d/xFeZ2shyEfwT+4M2
+# PXWgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -62,11 +47,11 @@ Add-Content $HOME\.bash_profile 'ssh-add $HOME/.ssh/$GIT_PAIRKEY'
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUS9qL4BkRRUHIsJ+iegrc7Z4xh2owDQYJKoZIhvcNAQEBBQAE
-# ggEAVbM+/uJmJYktn/IS3XNTOcfhLdTnkQtdMWZT3QC0gWh2e2jzNOqAxmYHxZB7
-# zPgcA75l3x8v4oCWALj9oeN0+fwifHTWDtFSzG6TiGtghRd3OE9smHIexLTTSEH7
-# i7eqMdhTiCoZ99xO6Sn9ATPqYkhlDIqV240WzIdC/FZVL85HGBrypnTMFlSuD0L+
-# 7qA0CzW2KrXuvRvhDt7YxjFqO2shQ/C9XplalxNhUs9QL+fpHRBwh5UX1kaIyQVs
-# td+n1oxWHSsbIYcWT41p/ZswKQ0YHbBEQsZDX6BXyWRa+nYZILzUABAeFpT73YCo
-# AQ4TIpYUXyHcYJaMnsobsFSr4Q==
+# hkiG9w0BCQQxFgQUfyrBk4thv8PCaPgGVdCDtQEvAyYwDQYJKoZIhvcNAQEBBQAE
+# ggEAJE2KatF2JIvA1ytKU2VOgfH5+xnYrwaMh18H6Hl/67ZLCHavRhvNppMaBm8i
+# LD7pkx2HSq2+im7k7iPQr9GNoVtMlu8yDn7ciVSZsHb7MO6F5eTskH6PfUThiqr4
+# TkSDGgg1KsWdNRjwi8xU5w9VBw07lNMaadgKZaEuTYNl57XLuOSYpcM+wesEmIoF
+# gkEXmRfLk4YLZpFOTvB3PRXRtU5yjskbBOUddEh3wL8L9Iud6JJ/IZ0Oczhte+hI
+# Io3j9iz7QvBn00CpeZGU+3C2Y7VRnD7a1eOfem4ChTwAZHnzsgh4LVvAtFLlI/Uq
+# KJ0kDg5B1pNbj7O8IC/ZEZpkAg==
 # SIG # End signature block

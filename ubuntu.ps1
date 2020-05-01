@@ -1,22 +1,13 @@
-﻿echo "Installation Node"
-choco install -y nodejs.install
-choco install -y python2
-choco install -y yarn
-choco install -y microsoft-build-tools-2013
-
-echo "Packages And Configuration"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
-#npm install --global --production windows-build-tools
-#npm config set msvs_version 2015 --global
-#npm config set python python2.7
-npm install -g http-server
-npm install -g electron
+﻿echo "Install Ubuntu"
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+Add-AppxPackage .\Ubuntu.appx
+ubuntu1804.exe
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUNURnp7gMy+JSRjbfEeYetm/0
-# FQegggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUFKKqRLqzc+Tw3041HXsdUrkj
+# ff+gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -36,11 +27,11 @@ npm install -g electron
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUqxoqSWqnVdvV+LEaCNQ6v/2rEA8wDQYJKoZIhvcNAQEBBQAE
-# ggEAF335Vb/oS9JMw+ZcnfFQTYmtbCxZ5Ri3KDpshm4oOJPlM+tJaY9EuZtjMmv7
-# 5CiwqYq9KYtx7FVXe50yia3Y874QJ9hCh8rgDab0dB87TGE2oxkwuods7dvVxm9v
-# oTMWpj4zb7F8CaWs92VJvXzoqok5Ym+mAisUrSMhiiZ0NNf8rw0jRYtX48AexAqE
-# 9vRlNT7GJsH8wTEaYbXH7rl00tCljkbhthipvfbORYRsSpTR6rsITXIhmhSazNQb
-# uO3wez9X3XunwlvwBVZY1lIhvWCpGBSAn5IA/fl7/6GTucYPPAYT3XYLUKj568g2
-# bU418D/l6LI213RSAJQ33iEWBA==
+# hkiG9w0BCQQxFgQUHXWGOYKGfMSWOONNc50Sf0bIYU8wDQYJKoZIhvcNAQEBBQAE
+# ggEAFB5+cEUkOrN2n65OgEs04gMZaxa8SwVDVTuO3NkbnyWIQcPn9DCh+7jJJf5m
+# rtZjhMh+Zin0IZFiMTU0pZqR/wbnTn8pWiF+0WV1/KNN/stfAhPx0K2VfUCd+lOV
+# 9gS2U0AjG2xbWurmLGSyyxHGrYVSOQDBcClafpiLUyQTU+qpm4Xeesao+ZEC+lPf
+# lOmhmOVN5tbeToNjD7yO3gj54jMoiqFZdF51j5Gfj0fAQgw3Izbf8Xdf22aXtAFJ
+# 10FY4Ie6+XIowrjyH5ICQ/6BMLOpxhloFSxV4v54vt89QD12VFBTeo25jC7h3iwj
+# mC/pD/mi+AyXUFgXPAvEbLx0Tg==
 # SIG # End signature block

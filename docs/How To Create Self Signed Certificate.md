@@ -78,3 +78,19 @@ Import-PfxCertificate -FilePath .\cfg\keys\certificates\SauloSelfSignerPs1Cert.p
 Import-PfxCertificate -FilePath .\cfg\keys\certificates\SauloSelfSignerPs1Cert.pfx  -CertStoreLocation Cert:\CurrentUser\Root\ -Password (ConvertTo-SecureString -String 'saulo' -AsPlainText -Force)
 Import-PfxCertificate -FilePath .\cfg\keys\certificates\SauloSelfSignerPs1Cert.pfx  -CertStoreLocation Cert:\LocalMachine\TrustedPublisher\ -Password (ConvertTo-SecureString -String 'saulo' -AsPlainText -Force)
 ```
+
+## Fix Npm Slow on Windows
+
+In Windows Defender settings => Virus & threat protection => Virus & threat protection Settings => Exclusions
+
+Add the Foloowing paths
+
+- C:\Program Files\nodejs
+- C:\Users\<your username>\AppData\Roaming\npm
+- C:\Users\<your username>\AppData\Roaming\npm\cache
+
+If Still Slow Run
+
+```
+npm config set registry http://registry.npmjs.org/ --global
+```
