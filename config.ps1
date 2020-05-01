@@ -3,9 +3,9 @@ Get-ExecutionPolicy
 Set-ExecutionPolicy RemoteSigned -Force
 Get-ExecutionPolicy
 
-echo "Updating Windows"
-Get-WindowsUpdate
-Install-WindowsUpdate -AcceptAll -IgnoreReboot
+#echo "Updating Windows"
+#Get-WindowsUpdate
+#Install-WindowsUpdate -AcceptAll -IgnoreReboot
 
 echo "Show Hidden Files"
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden /t REG_DWORD /d 0x1 /f
@@ -43,8 +43,8 @@ Start-Service ssh-agent
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUoMCHKCrLLYS0svx53/lzGtCt
-# IRGgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUlvjkDMPhyTwIpwB+mYLHYJjN
+# qV6gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -64,11 +64,11 @@ Start-Service ssh-agent
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUSAJDKJlJNzSMhLsehYHoVX2enc8wDQYJKoZIhvcNAQEBBQAE
-# ggEACVSlvbtkh0Z3/zkFZet8+raEoOMLK08nnDpzGWLol+tj3eB32r7jKfl+SJol
-# UAYs6orw8kv6jzsw5GTaRtCJtNDoiuJJhMQypa1HUGUdeysJ+0Ma3LqTT8tiSJFE
-# ad2QgKf5uhjUMWyuvUsqX/YAcRx5sC9zz15BabjvXazEMNQ82Apv2+keIb04aocj
-# qxKK3Nw2FpJ23MQrhYE94bFBPQggQ3NHdKLeBSBvCNd6SWegrHetjn1nlx4xYDaS
-# GBhlWjuzcjPFRHAtUTdIK+uroswI5CLW5G3n3tjI5JuqFVI1NAgBIsCWdRjLgrN1
-# ia4YXlyZIRKZHwJc5mXscJdvvA==
+# hkiG9w0BCQQxFgQUEudKHjTBFbr0pUnmE1P+m5vg1NcwDQYJKoZIhvcNAQEBBQAE
+# ggEAAvaNj3M1H3Md9FfQcAuiF/FsT5/QfFj4jsXH7JaZE/0Pf26Q+NND93A7kG5R
+# 4hcqRKqy+JuSdxevnVULaV/GN22D3N9gDrIO230bcoNfYhYI9ktyiduJNmXIW5c7
+# O8+a9p2e1Bbqh1DCdylazkOgA7/FGbUD6zJ/+1mZUdqwk/Z25wj0PIiTb6apqd4r
+# Qk0jPicjapCHBhD7gz6HwgGqR2TpKIBugLMveO488D+YYnBj//EHvvd9Sb1Zo4Lu
+# Tlahe1+EIRV83H8vJhu+14JFSTtc+SgSwlcpziGTCOqBpTWA1lBvaziPvOO/z8vT
+# AxVOBtcChUv4it0rHgP14wP8JQ==
 # SIG # End signature block
