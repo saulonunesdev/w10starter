@@ -1,25 +1,42 @@
-﻿echo "Add SSH Key"
-ssh-add
-
-echo "Add GitHub Connection"
-ssh -o StrictHostKeyChecking=no git@github.com
-ssh-keyscan -H github.com >> $HOME/.ssh/known_hosts
-ssh -T git@github.com
-
-echo "Add GitLab Connection"
-ssh -o StrictHostKeyChecking=no git@gitlab.com
-ssh-keyscan -H gitlab.com >> $HOME/.ssh/known_hosts
-ssh -T git@gitlab.com
-
-echo "Setting Git Bash SSH"
-Add-Content $HOME\.bash_profile 'eval $(ssh-agent -s)'
-Add-Content $HOME\.bash_profile 'ssh-add'
+﻿$idrsa = $env:OneDrive + "\keys\git\id_rsa"
+$idrsapub = $env:OneDrive + "\keys\git\id_rsa.pub"
+if ((Test-Path -path $idrsa) -and (Test-Path -path $idrsapub))
+{ 
+  #Windows SSH Key Must Be id_rsa or will fail with permission denied
+  echo "Saving SSH Key"
+  md $HOME/.ssh
+  cp $idrsa $HOME\.ssh\id_rsa
+  cp $idrsapub $HOME\.ssh\id_rsa.pub
+  
+  echo "Add SSH Key"
+  ssh-add
+  
+  echo "Add GitHub Connection"
+  ssh -o StrictHostKeyChecking=no git@github.com
+  ssh-keyscan -H github.com >> $HOME/.ssh/known_hosts
+  ssh -T git@github.com
+  
+  echo "Add GitLab Connection"
+  ssh -o StrictHostKeyChecking=no git@gitlab.com
+  ssh-keyscan -H gitlab.com >> $HOME/.ssh/known_hosts
+  ssh -T git@gitlab.com
+  
+  echo "Setting Git Bash SSH"
+  Add-Content $HOME\.bash_profile 'eval $(ssh-agent -s)'
+  Add-Content $HOME\.bash_profile 'ssh-add'
+}
+else
+{
+  echo "No SSH Key Found in: "
+  echo $idrsa
+  echo $idrsapub
+}
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4SCPKVWL10A0G1YtB0H6jbGm
-# fT6gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUC69zQVk1Syr0gNthWI/usT0N
+# ZQKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -39,11 +56,11 @@ Add-Content $HOME\.bash_profile 'ssh-add'
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUu+73Z5nDIFybx+GZsgkCBsaRwFswDQYJKoZIhvcNAQEBBQAE
-# ggEAWhMFrZSuemEx55Jk/gW/GQUX3FB9+F2ofTrCEVEu0oIfNI6Mb+SkO15xMpr0
-# X4xEdvolvbO836sWL7U6FHLl1ruKRxzVVd9mgVHQpmc/61BPKql8vdcAPttne8RI
-# NzNPiHFxWNClyZs8nrbq8zJ3mK0L/ZDIkDIs+aoRu98p0464qAvCszDQkwiWEBDa
-# 5oPP4ForVhndhDuMmwZFYrvGCZa2v/elq7UvyUEAd30Cs7RQT5vu/b0dlXRT1NEi
-# sKJJ9kJJvup6QATs7qDIWmIGcQcmej8HwI28GKHVO4JehFWSmADJbYRSdVFbLq5W
-# 67bNp0R0wGHMPBQPyTEEmKCFBA==
+# hkiG9w0BCQQxFgQUerbMCONWqF7rtr9Jr4xoiaYQH7gwDQYJKoZIhvcNAQEBBQAE
+# ggEATm4sEE7gVxtYksbB8cyWQG+D6hOkso5D2iENtRrx840Z6GczIMzsvVe9CTy7
+# rPvGnYYitxABDwNEIb8y1aUxXQ54NPZ/uql/coDid98nBbYNbqyrpngUAoO0auAH
+# +Lz7UpsxeH4WO57YWD+myWCF2r3cfkM4+ACWO6kXKWj/FI0W8kkmdHJ7j9w1xJni
+# 5LEatDYZ+mximFwRGX24w7TVr1smti55CoIwG5gdB3hFZmKoWlA2zj6xnU/tReBE
+# +MTL6sNlSt61+xSMFyxFX3Nvw6fvvxChhUbbdlkBobQu+ZyqC+khInpAmY//odlz
+# P4agv5Bhc4RpXXHFIjQGL15jJQ==
 # SIG # End signature block

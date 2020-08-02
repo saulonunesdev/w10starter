@@ -1,22 +1,10 @@
-﻿echo "Setting Execution Policy To All Signed"
-Get-ExecutionPolicy
-Set-ExecutionPolicy RemoteSigned -Force
-Get-ExecutionPolicy
-
-#echo "Updating Windows"
-#Get-WindowsUpdate
-#Install-WindowsUpdate -AcceptAll -IgnoreReboot
-
-echo "Show Hidden Files"
+﻿echo "Show Hidden Files"
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden /t REG_DWORD /d 0x1 /f
 reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden
 
 echo "Show Files Extension"
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x0 /f
 reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt
-
-echo "Starting Remove Bloatware Windows 10 Script"
-powershell -File ".\remove-default-apps.ps1"
 
 echo "Downloading Fonts for ZSH in PowerShell"
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf -OutFile Meslol20Reg.ttf
@@ -43,8 +31,8 @@ Start-Service ssh-agent
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUlvjkDMPhyTwIpwB+mYLHYJjN
-# qV6gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUzCiEff+YavEN853ilcrMGuJc
+# 4V+gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -64,11 +52,11 @@ Start-Service ssh-agent
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUEudKHjTBFbr0pUnmE1P+m5vg1NcwDQYJKoZIhvcNAQEBBQAE
-# ggEAAvaNj3M1H3Md9FfQcAuiF/FsT5/QfFj4jsXH7JaZE/0Pf26Q+NND93A7kG5R
-# 4hcqRKqy+JuSdxevnVULaV/GN22D3N9gDrIO230bcoNfYhYI9ktyiduJNmXIW5c7
-# O8+a9p2e1Bbqh1DCdylazkOgA7/FGbUD6zJ/+1mZUdqwk/Z25wj0PIiTb6apqd4r
-# Qk0jPicjapCHBhD7gz6HwgGqR2TpKIBugLMveO488D+YYnBj//EHvvd9Sb1Zo4Lu
-# Tlahe1+EIRV83H8vJhu+14JFSTtc+SgSwlcpziGTCOqBpTWA1lBvaziPvOO/z8vT
-# AxVOBtcChUv4it0rHgP14wP8JQ==
+# hkiG9w0BCQQxFgQUKmKyBfN3Xgyc4MT8Fdxe+La0fTcwDQYJKoZIhvcNAQEBBQAE
+# ggEAeT0ruduvmmrr3FNNTe8Ag4leiBMG8EO1AbXkJ4MD/KRuHrN561cm8KcAivRv
+# XFzjkNt1B6i8dV3aVl7RWNXq3uCYj417deDoPLYe7pEdzT6Ea4R8NVTCK7JHgOut
+# pqNT4iYCFfTde9i3QIgpF2Pgg/4p0b49UYq1HYShyYhw5e6epa6kTjP9mT1EOfZu
+# XOUfOpXYxy+rW1CYziXlB7UF9VU6DRcpCI5l+YfG1TUC2yo2nCSA6qn/BNuEyuFz
+# EvkEwxYwJB5CWoEQt9AHNuVed3XphD5OX7Mn+hmgjP1pwijrOMoLZy8riBvX3Bap
+# ztKsnvBTMGP6N5s5xLo+h7XVfA==
 # SIG # End signature block

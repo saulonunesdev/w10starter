@@ -2,7 +2,7 @@
 
 PowerShell Script to Configure Windows 10
 
-[Gist](https://gist.github.com/SauloNunes/412d062ee9a4f313bf96f586a5088f82)
+[Gist](https://gist.github.com/saulonunesdev/412d062ee9a4f313bf96f586a5088f82)
 
 ## Before You Start
 

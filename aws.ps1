@@ -4,11 +4,18 @@ choco install awscli -y
 echo "Configure AWS"
 cp $env:OneDrive\keys\.aws $HOME\.aws -r
 
+echo "Refresh PowerShell Environment Variables"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
+
+echo "Checking Aws Config"
+aws configure list
+
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUESj/NFQFWggNMl9Tb1SqEs1M
-# zFKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUAz644rYTK4ZYzTrG47n7PdCl
+# Io2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -28,11 +35,11 @@ cp $env:OneDrive\keys\.aws $HOME\.aws -r
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUkTfbEeUlTarFJ9qczRIF0ZETR+wwDQYJKoZIhvcNAQEBBQAE
-# ggEAlo3N++8Li+sEb8f3ULhK11iXwRlYhIY9N7+su1sd2yP0k0Fa+3vwVtsl/rU+
-# pl/uNAIIHUFe7tZG/aoc/b8U92550DalTeex/uhLX/JYyTJTDTWhxuuc75wcg5Ch
-# 3CAF1IOHYKJM+ogCd2zJ7sW4l+7Mi47lr+opadBtAeat+gEQtLDjbHaoanHhV/dn
-# q7EKE157W4/lFxIkFXo4D7s75cBZlEAVW2idjVvz6pOCEl5ldNRy6c4YiYJk8kGg
-# x2RDl0EQg3c8mr+edt5ioVKDOyt3+gcoz9SSqRdEN90p9GhcFEvCYtv97ZEnx6vA
-# SMEnyUpkHbOTpSvfp5phtCUm8g==
+# hkiG9w0BCQQxFgQUF4UxQYCloG8yHicRP0eJL9GPFtgwDQYJKoZIhvcNAQEBBQAE
+# ggEAQHCQZKzhDkmGQelgJgC+rP6c5u/gKZpGKs/f934HMAKwa1TDErumkMlLuudd
+# tvBvOPI3AQ5I+XQpzyLCyEr4Aw9Pu0ju1F3D88TqfJBc2mqDhWcM3Y2UfKRnLtfz
+# /MfSv8YU5l/3TRFIeFf+A1PZZ9ceekwrPlMJQS0KYwdILcOJA/ea3qFOAoyK/QuE
+# HRVmLIc4hfn8iCeRznG+MK+1rsNLIQgLWizn+YfGNUD7svByug2cz4jBfFKjxUJp
+# tlxTmqEsAWVLifsKxrS517uv2ukgTBjCF8tKPv9+QkQCKZ3PfJcXxedaefr10Abx
+# bMGIb7Bi7vuOeIcNmBHSGfZ7WQ==
 # SIG # End signature block

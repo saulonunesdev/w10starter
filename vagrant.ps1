@@ -1,19 +1,16 @@
 echo "Installing Vagrant"
 choco install vagrant -y
 
-echo "Create VAGRANT BOXES Directory"
-cd $args[0]
-md Vagrant
-cd Vagrant
-md Boxes
+echo "Creating Vagrant Boxes Folder"
 $VagrantHomeFolder = $args[0] + "\Vagrant\Boxes"
+md $VagrantHomeFolder
+echo $VagrantHomeFolder
 
 echo "Change VAGRANT BOXES Directory"
 [Environment]::SetEnvironmentVariable("VAGRANT_HOME", $VagrantHomeFolder, "Machine")
 
-#echo "Checking Current BOX Folder"
 echo "Refresh PowerShell Environment Variables"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 refreshenv
 
 echo "Installing Vagrant Virtualbox Guest"
@@ -22,8 +19,8 @@ vagrant plugin install vagrant-vbguest
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXV9ZC/1N41/tEUrb5xe3n9Fg
-# ozKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUoxdZTnZ00a1BZ2N/5JErhFVe
+# P16gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -43,11 +40,11 @@ vagrant plugin install vagrant-vbguest
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUOalKLnm39F2wkzw2jx7hU9KFz+EwDQYJKoZIhvcNAQEBBQAE
-# ggEAmkRafJ+6Xy3jNKAELDTBF/ETKq7CqMBcsMaKvhcptV8gfspw2mckY1pWV058
-# WVjpzkiCPU4mnjSd+koOUaQu8Gns9N4rIhS6vtZbC1LlWC+Fq0joCE2Sm82/o7Hi
-# qCpF3MTAEOddYIhGruappzq05odZI0h6E7e69TSDs88UGWd8jFusZZXcuAObfb8X
-# kd2Ynyx2accn9ZL0zMlqoKvc3b57QYlT6JrdwcyxP+6FJ3YSRBi5KH/F53TEg6ZQ
-# lIyfN3ryjR9rJ6xN7PmarbnVIhdobiOlpf+04Bqo/Es/5jSAWD9rBgSIQbfJkte8
-# pUr2P4ZQOJS28GysTogYjgQjFA==
+# hkiG9w0BCQQxFgQUPXxyt+Mdn93gGYpYUhozr0MmcN4wDQYJKoZIhvcNAQEBBQAE
+# ggEAdrVTXOmldU70tLhhXWfZXeaqdeSq36w/V1dRUqnsM6UkNHy0fUh7KZfFJbVp
+# lfbPrQHhrqkI3Q8z+wuV5m56KYy3s+XuOazLIuFwuwcF20V4gc/MOov8nydfw4YJ
+# /tCzMMp/f7GNKdN/r7izLK1yPtmlCqY9/Rz6BahCOW3HzyeXMPptrWbyE78sFkuC
+# hEuZP27nZjaoY2esz2Em82NwPsZShlK02mDvBuQiX9QPmJuC4aHFPmoL3XKB7rz3
+# kP8BgeY5RsD3Owd8ZuI/Y1UCQEPz7ImXxD8asn+DLdyYOM4Tj0bMj+ebwvHAIckG
+# SUroHUJIpT1UHNmYM8k9IiILIQ==
 # SIG # End signature block

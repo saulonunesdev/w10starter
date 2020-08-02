@@ -1,27 +1,26 @@
 echo "Installing VirtualBox"
 choco install virtualbox -y
 
-echo "Change VirtualBox VIRTUALMACHINES Directory"
-cd $args[0]
-md VirtualBox
-cd VirtualBox
-md VirtualMachines
+echo "Creating Virtualbox VM Folder"
+$VirtualBoxFolder = $args[0] + "\VirtualBox\VirtualMachines"
+md $VirtualBoxFolder
+echo $VirtualBoxFolder
 
 echo "Refresh PowerShell Environment Variables"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
 
 echo "Check Current VM Folder"
 vboxmanage list systemproperties
 
 echo "Change VM Folder"
-$VirtualBoxFolder = $args[0] + "\VirtualBox\VirtualMachines"
 vboxmanage setproperty machinefolder $VirtualBoxFolder
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdPLTmZqOqpUcUHwxo+NOwL3t
-# rCOgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUxiSwQlteL4DZIuctYeo1u3wp
+# kGOgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -41,11 +40,11 @@ vboxmanage setproperty machinefolder $VirtualBoxFolder
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQU6NS2B3LV5YCCKjy/FiLXMQAKErwwDQYJKoZIhvcNAQEBBQAE
-# ggEAQQACFPtNUB0ZOerUik/sItYLXyqBuetr6YJnpJbtrDKNozqXLW+8hCHfaBGz
-# HFe7HyegyIPqOCKMuRPbUmuPnD/196j1L4udM4Mr7vHE4eiREPL+JsVkuph2xrhD
-# A/hvW2Gt0uWq/b4NYymybVH+fGwel6TW4XxmEeYHlCYVmLMBV24eOpbzh4HGq/q1
-# a1MBdPZARs2gCBYBEni+Cn3JhkcVfiydEueGMX8z0upul93PCwt0/YLqgWOsFOCo
-# ODTtq0mBwaSCip6wvK1FYI2oOd6tOFAODwbmQN08rW5gvk5/0xc2YVRzG9iDIOSr
-# uTs7IjxUaT8rAMjk0s5hYTGXeQ==
+# hkiG9w0BCQQxFgQUZ1be0tkS5jZXCO2mF2aohG/63AswDQYJKoZIhvcNAQEBBQAE
+# ggEAVwk+9BTPTwNL44i1+qWCkG3zeZqyd6fOm5igX1RTtS8CzXwQDVnGvl7IClb8
+# U7/Fn37jromsS/eQ+GGywmohitA6faU4wseFGqmC7BfakJIJQaajg2QNsxh0EVK1
+# 2K+3m+4gj52i6uPVjqAfIiK2W+McK4Z9BydPOk507e7JcoP4siIVgdwisVZ0t2mA
+# kRIwZGNsMY57ob1nLEYHiWhoeUOOUBdcAB/QmKh/zcSa9cDqjSvyX+9W4iqbfQrS
+# XzadqcexM6SX1RZ3lx4+yXfg0e/d6CbFfiD/WmIf8fP7Af025zTfoeI5JbXT/Qgv
+# iGNf3OtQFtxGT3wm5dpmzzmn9A==
 # SIG # End signature block

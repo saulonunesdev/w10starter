@@ -1,6 +1,10 @@
 echo "Installing VSCode"
 choco install visualstudiocode -y
 
+echo "Refresh PowerShell Environment Variables"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
+
 echo "VSCode 3rd Party Integration Extensions"
 code --install-extension icrawl.discord-vscode
 code --install-extension ms-vsliveshare.vsliveshare
@@ -9,7 +13,7 @@ code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
 code --install-extension eg2.vscode-npm-script
 code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension ms-azuretools.vscode-docker
+#code --install-extension ms-azuretools.vscode-docker
 echo "VSCode MarkDown Extensions"
 code --install-extension bierner.markdown-preview-github-styles
 echo "VSCode Themes Extensions"
@@ -31,13 +35,22 @@ echo "VSCode Chrome Debugger"
 code --install-extension msjsdiag.debugger-for-chrome
 
 echo "Update Settings.json"
-cp .\cfg\settings.json $HOME\AppData\Roaming\Code\User\settings.json
+$settings = $env:OneDrive + "\settings\vscode\settings.json"
+if (Test-Path -path $settings)
+{ 
+  cp $settings $HOME\AppData\Roaming\Code\User\settings.json
+}
+else
+{
+  cp .\cfg\settings.json $HOME\AppData\Roaming\Code\User\settings.json
+}
+
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUIiDvEx9APxoGiu2hCHAMl4j6
-# +B2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUovoJhe3v6rgsPMNqT0rZL3yf
+# xl2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -57,11 +70,11 @@ cp .\cfg\settings.json $HOME\AppData\Roaming\Code\User\settings.json
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUsOferKwvJKonlk7Vsd5k/l64MlswDQYJKoZIhvcNAQEBBQAE
-# ggEAFMtkXaLlDHQhosEPrjwU8bDj6ZBSHPiefLqrnBwlMSKzvWXA6VP3R820PkQ5
-# EZsI3wz1X2cON2C4T+liOqlKNvCMCcm26Tna4meFW/IuS2HuHsohc+DjhYoyHFjY
-# OpiPwY3HasigR9EjQk6y5/JRTLwTHO2dfEZC68ptwf0+ULPyBw06BOLV9OSJ1EOI
-# o7fzOimlUpwed1nKHfrwuyDyCFiWx2JhrT0FOdiTrzQi5PZQuGRKetA9wf6mzBIT
-# jtY2BtCRVs58Ca/Rbcsm3IFmPcu3X8TvuXnKv4j21aLBxmFffOw2vb63bKvZn5Bv
-# QvJNUqhPDigvnIk7usSIiyecsg==
+# hkiG9w0BCQQxFgQU44pMXJwyAplrG3QREm7olMmiXskwDQYJKoZIhvcNAQEBBQAE
+# ggEAdyTGLkDLMMhAsN6aPaOQ/LHeB8D9/rd0J2Ocq1MmRwYkYhB7RIUSlKaO2eY6
+# WkzdDe+1I7uSwQKElFU6WhO5iOZ3oXDFHXt72wwdLY36ba2IJLDtgohDpWTUMkTI
+# +6PP9d1xN6W1+KgCDA0ab26BM1XyF6g+MjVQbX27sgaEQy/giTlBSbT+LooyKQeE
+# AV2X3Sgja0H3K8vEkutaEKjVf3i1dPsoGNfUm+j+XFG5exVk47VK6HnxyYcnNKHy
+# o6cM4CUWsks1KFWjOPYkc544DO/G9PEPFapm7ED5Ctg6D5zNugpxe0CPbbC7JWlF
+# gVRJApEMNWhr3xq6tk/4CzXN1Q==
 # SIG # End signature block

@@ -3,31 +3,28 @@
 echo "Installing GIT"
 choco install git.install -y
 
+echo "Installing Git Completion for PowerShell"
+choco install poshgit -y
+
+echo "Refresh PowerShell Environment Variables"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
+
 echo "Configuring GIT"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 git config --global user.name $UserName
 git config --global user.email $UserEmail
 git config --global core.fileMode false
 git config --global core.autocrlf false
 git config --list
 
-echo "Installing Github Desktop"
-choco install github-desktop -y
-
-echo "Installing Git Completion for PowerShell"
-choco install poshgit -y
-
-#Windows SSH Key Must Be id_rsa or will fail with permission denied
-echo "Saving SSH Key"
-md $HOME/.ssh
-cp $env:OneDrive\keys\git\id_rsa $HOME\.ssh\id_rsa
-cp $env:OneDrive\keys\git\id_rsa.pub $HOME\.ssh\id_rsa.pub
+#echo "Installing Github Desktop"
+#choco install github-desktop -y
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUsWnZX6d/xFeZ2shyEfwT+4M2
-# PXWgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU43uDMoREnJrXhUYyuNQE1ZAB
+# wnigggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -47,11 +44,11 @@ cp $env:OneDrive\keys\git\id_rsa.pub $HOME\.ssh\id_rsa.pub
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUfyrBk4thv8PCaPgGVdCDtQEvAyYwDQYJKoZIhvcNAQEBBQAE
-# ggEAJE2KatF2JIvA1ytKU2VOgfH5+xnYrwaMh18H6Hl/67ZLCHavRhvNppMaBm8i
-# LD7pkx2HSq2+im7k7iPQr9GNoVtMlu8yDn7ciVSZsHb7MO6F5eTskH6PfUThiqr4
-# TkSDGgg1KsWdNRjwi8xU5w9VBw07lNMaadgKZaEuTYNl57XLuOSYpcM+wesEmIoF
-# gkEXmRfLk4YLZpFOTvB3PRXRtU5yjskbBOUddEh3wL8L9Iud6JJ/IZ0Oczhte+hI
-# Io3j9iz7QvBn00CpeZGU+3C2Y7VRnD7a1eOfem4ChTwAZHnzsgh4LVvAtFLlI/Uq
-# KJ0kDg5B1pNbj7O8IC/ZEZpkAg==
+# hkiG9w0BCQQxFgQUhMtBb2MEQnNLY14dTs5VXhTSkhwwDQYJKoZIhvcNAQEBBQAE
+# ggEAa34HIRFdu0UN/fiD1DgGhCrjeex+rMhG7JX/2DGIuZ+SLADkca9TeXkQLqPm
+# JadfITmAKQ2e0tQRLsfbkJe3r4c0RUB3mrHKkgxFlYWY6U43VND3b6OUYzMlWSYS
+# YD/Uux6Eanex4RJ6tnk4sIzOT0V0hTUSJj85opHXl/QLGoHvnhhN8hfuNwqCtzYW
+# bykstollpIVZZkBQOfzk4V/sAG7cSrueqB8MmPo3BTwejSOeN9eSvgVODkqYv3xB
+# e1lDvu/Mql+67XT3++cBvL/skRTSSDp9e+yLlhKn8qJrkjf1g2I+I/ltchcENnFP
+# CznrgtdVgpDAkrZT3FYKbgCdbw==
 # SIG # End signature block
