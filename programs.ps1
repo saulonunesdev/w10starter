@@ -20,6 +20,7 @@ choco install putty.install -y
 choco install notepadplusplus.install -y
 choco install dbeaver -y
 choco install postman -y
+choco install hyper -y
 #choco install vcxsrv -y
 #choco install xming -y
 
@@ -33,8 +34,8 @@ refreshenv
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUH6xKuYlmDQZFvnBe18JLUZx8
-# roCgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU132C4BYmM4294b1lZkcySjuh
+# teGgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -54,11 +55,11 @@ refreshenv
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQU3hGLbhORNiZhLleXA4K2ckJNp+cwDQYJKoZIhvcNAQEBBQAE
-# ggEAftpSTT+/VkJZ80FMtK/+hZhxG2q/GpXuSTMQ0SmUlsBmpd52vxi6sYIruMQK
-# pZIBZKPNZPBulA1Bzszqp7H1HO74EQpRDKm0mur9PPrR1tag6fK6mkw7reQKXAqA
-# bHfDZUERyTLxg3rArB8A8BB/1zUmX2nYkniKqmuIeHwnCDGKde+mMetiyp0WINoY
-# 2owuR7rPgMryFaT5vw7PXYF9d65uS5EYPdAue61ojaW08FQOXfnztwXzxGJq1dlR
-# hRBlVPwYWgmULz0tG95t3rNPEDiut62HvhHef1dGuR5D3KJCNj+ExmlTseQkqkp4
-# YFxutyRbN+FARSVxgPR8nmopMg==
+# hkiG9w0BCQQxFgQU93KC4lobgMgDtzML0OJiZ5GJAn8wDQYJKoZIhvcNAQEBBQAE
+# ggEAqvbMVKugF4XmGR3kcQnbZCNr9tGQda1+e1OIJn1a9fUXFetsz+R8vaYT6I3h
+# v4rx7emmQ3MqUGr8h4u38Hi5RYQt+cPRQX6rib9tRqW4gg5qZGw7PrI1BxsLn2yp
+# UzJJ/xykI+pyyCQUPnBA65Z3dXbKAs7ISNbiX28XIvBWrK9R8b1j2lv1xQeMhkls
+# BO5Z0IpRl0cLVzjfgtczJcaZvserBOaDxiz1moc3gGDCqhjf78YqNoohqa6MvHEQ
+# /1un/NhZ1vF7eSrgH6WZlrI88Q/8kvLC4yX7PIgpc0jK48gvLJJmdY8yLRBpeg7B
+# D0Kk24RyqdfgUrO2kDFjTPqlww==
 # SIG # End signature block

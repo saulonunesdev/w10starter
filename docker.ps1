@@ -1,5 +1,5 @@
-﻿echo "Install HyperV"
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+﻿#echo "Install HyperV"
+#Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 echo "Install Docker Desktop"
 choco install docker-desktop -y
@@ -7,8 +7,8 @@ choco install docker-desktop -y
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUZhuxt91nuxwTi0PmCz+ht/5l
-# bsugggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUSt+RI17Xkc+9GARpHOsdKoYZ
+# IpSgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -28,11 +28,11 @@ choco install docker-desktop -y
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUH+pl7n8xn4ZD1SMlpU0zgPxdPXQwDQYJKoZIhvcNAQEBBQAE
-# ggEAFPyoORNsm/nobh8V9gYPs9z7atJOQdPL93isDLy+993lsZiSO/aHz1j/x1aY
-# sgWcm6VMcCDdwmhiIl8Aq/tCS2feeRcnDVFIK7QhcYzgWJQvjX0whXtIufISe0a1
-# fIXo2UcyMefnT9sCKioQ3fb0QQnHXruj9v5EykATBWrR7CiInkLriSxbWfM9hES0
-# keGlNX+4locXiDwliXBsyN2r4B6ei/59FzQ24+GCHrMEhPDNg9/v8IWD5UH3vEC1
-# d6EN60r3OLFa+8z8u/oK6Xbxxm8X1OINooTsIyNqXwNfrGhKUr1lQTZBi26DYV+6
-# lWeC8CO+qD7OhyAvdXtc2G0MrQ==
+# hkiG9w0BCQQxFgQUxO8uRKpfky4jBPD26gOhNbjR23UwDQYJKoZIhvcNAQEBBQAE
+# ggEAWp98zR3Q+epAYyVr0/KlqnOfaWiMkbPo9bp3aQmq9eGJofCwF/slFn4nTZEJ
+# jxyqhtxjqJfV1NH3bF9f5Z4HYF5wQFm+Jbr1Dr2QvirAukG2cnxYt936AbuH31Nc
+# rNnI/LLJL7qSMA6D1jI1O36QGDPhliJ1+NZd8x0EEg5PGJW/lgU7lljyhiWEd4sJ
+# 6J/bdvC6g1XLWySMZKtkGeu50CtqUe3MkeDAndjvZviJxve0BcUrvxL9zUFBEZeB
+# ojiczpjIbDENXcbD0QkoHgKU8XgEmxsO75NRNL/v/QMMlE7MsrZUNU1vTYls5PS9
+# s2nlAurNRkJ4p/5xd5vg8z8/KQ==
 # SIG # End signature block

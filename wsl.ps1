@@ -1,14 +1,29 @@
 ﻿echo "Enable Developer Mode"
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 
-echo "Install WSL"
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+echo "Enable WSL"
+#Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+echo "Enable Virtual Machine Platform"
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+echo "Install WSL2"
+wget https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile wsl_update_x64.msi
+msiexec /a "wsl_update_x64.msi" /passive
+
+echo "Refresh PowerShell Environment Variables"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
+
+echo "Set WSL 2 as Default Version"
+wsl --set-default-version 2
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUiopd/RqIX7C4e+z8ehXHzQIK
-# KlugggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUPtAWLe8vvqaV+bm7YeGt4lxY
+# HoigggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -28,11 +43,11 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUMpsLqcppSQi5YGmCDHBxfyN5avgwDQYJKoZIhvcNAQEBBQAE
-# ggEAiHuZMVKcNDKv6iDWphTvMVtfQzbOB8MF4azXKCQCaJcMtuNnCR/KJ8U0QsKs
-# RpyhRD1/Zg/KTayGDR4i5yFB3gTXjEsWmBmTXE1YQyyHvGdlxL4iHkDfuh6uqs72
-# k7aq7wXoRnk5xC6EOn9Fuw1Ja3hQRgZNsjSaSPcJqnDGOrsi3ZvMyOXifhYNNDtm
-# o4N2h/KhhzPwrl3sIdM//R/KrXxA2UCC+JpjFaK7Apyfmdlt7AiEpRfpAjuZNJhi
-# b5pL4T75cgzwvZiAgf19hu415KfwgXyK/uxUyoLjK5n2X6XcQnG+AVSmX7D2TwQj
-# BOsFPwplIQ9wY5pfho57rhDwyQ==
+# hkiG9w0BCQQxFgQUpwcDW/Dyr5yqHhTSsCJmC8HnpZwwDQYJKoZIhvcNAQEBBQAE
+# ggEAPBXkmWSNIE7v40ZRgvJ919BSfkBCLLfcATzEuR7X2Pz2gvYZlZAiEn8//K2P
+# HoER63hxx8w3loMZQzu7gDQAYkeXBV4KHJU75ouL1Sav7zo3EzJfJIgZ+y3uT9jh
+# H8D3D+UYbk7uhD/kHysbfoJLmuFdgrYG/NrxbcFjOoGCfdIob83+HEhPHLluUirx
+# PXtq9xcdSteBXlp/JRSsHZMIQZIg2UueFNkshtgf//FJthpNbZbcSRb3Z1E1Q3Gj
+# cf9VSxkSe4q4+3dlVyJdC3RX/naER+jkgimhdBuIwI7GyvTQc6kG4WeLS+hte0Nr
+# s4J70Ab7EoUqvt1hKCK1OoRHmQ==
 # SIG # End signature block

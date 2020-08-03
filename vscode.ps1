@@ -13,7 +13,7 @@ code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
 code --install-extension eg2.vscode-npm-script
 code --install-extension ms-vscode-remote.remote-wsl
-#code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
 echo "VSCode MarkDown Extensions"
 code --install-extension bierner.markdown-preview-github-styles
 echo "VSCode Themes Extensions"
@@ -49,8 +49,8 @@ else
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUovoJhe3v6rgsPMNqT0rZL3yf
-# xl2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUyaLG+iiBEDQo8Di/3EIMVflv
+# O1igggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -70,11 +70,11 @@ else
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQU44pMXJwyAplrG3QREm7olMmiXskwDQYJKoZIhvcNAQEBBQAE
-# ggEAdyTGLkDLMMhAsN6aPaOQ/LHeB8D9/rd0J2Ocq1MmRwYkYhB7RIUSlKaO2eY6
-# WkzdDe+1I7uSwQKElFU6WhO5iOZ3oXDFHXt72wwdLY36ba2IJLDtgohDpWTUMkTI
-# +6PP9d1xN6W1+KgCDA0ab26BM1XyF6g+MjVQbX27sgaEQy/giTlBSbT+LooyKQeE
-# AV2X3Sgja0H3K8vEkutaEKjVf3i1dPsoGNfUm+j+XFG5exVk47VK6HnxyYcnNKHy
-# o6cM4CUWsks1KFWjOPYkc544DO/G9PEPFapm7ED5Ctg6D5zNugpxe0CPbbC7JWlF
-# gVRJApEMNWhr3xq6tk/4CzXN1Q==
+# hkiG9w0BCQQxFgQU77Xn0toU+jXka3rrjaBRxxSS5+cwDQYJKoZIhvcNAQEBBQAE
+# ggEAW0TjeGNhyBfudDUGcFlYeRvqNNo1I7M8lLpUU6a/3K91ucsXNZg7oeLZhkfS
+# dZAxupYESm7M+1PZU4u2zN+ARkqtAKLEvqgHY4wkN53TjS3LizxFBIHZZ5tzjnYq
+# 6MWS+5d705dm+Gk22yc4Z+/rtmpSKrjUqqPXGr3y+mEMYBG5J6S2M9/an0I9meXt
+# 4HctHrhxY7A+31jY7JDhVufF1NtIJ8NFLpGY0yo8CtqRrq66U6L5BFkBYgsUZgL3
+# yiuQy3HmS6ZALfSUcVF1t+B9rUdzScRQd2dn4u4A+PcAVQM+LZiPTwrsiVIY86N1
+# O7ESfbXb+ZPIcnNdQVKshU5lag==
 # SIG # End signature block

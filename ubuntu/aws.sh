@@ -2,9 +2,10 @@
 
 echo "Installing AWS Cli"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
+sudo unzip awscliv2.zip
 sudo ./aws/install
 
+echo "Cleaning AWS Temp Files"
 rm awscliv2.zip
 rm -rf aws
 

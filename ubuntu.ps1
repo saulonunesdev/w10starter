@@ -1,13 +1,29 @@
-﻿echo "Install Ubuntu"
+﻿echo "Downloading Ubuntu 18.04 Package"
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+
+echo "Adding Ubuntu 18.04 Package"
 Add-AppxPackage .\Ubuntu.appx
-ubuntu1804.exe
+
+echo "Installing Ubuntu 18.04"
+ubuntu1804.exe exit
+
+echo "Cleaning Temp Files"
+rm .\Ubuntu.appx
+
+echo "Setting Default Ubuntu 18.04 As Default WSL"
+wslconfig.exe /s Ubuntu-18.04
+
+echo "Checking Ubuntu WSL"
+wsl -l -v
+
+echo "Ubuntu Apps Installation Script"
+wsl ./ubuntu/start.sh
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUFKKqRLqzc+Tw3041HXsdUrkj
-# ff+gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUWZh3A1op4s0MUhBPRGc2Emv1
+# uCqgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -27,11 +43,11 @@ ubuntu1804.exe
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUHXWGOYKGfMSWOONNc50Sf0bIYU8wDQYJKoZIhvcNAQEBBQAE
-# ggEAFB5+cEUkOrN2n65OgEs04gMZaxa8SwVDVTuO3NkbnyWIQcPn9DCh+7jJJf5m
-# rtZjhMh+Zin0IZFiMTU0pZqR/wbnTn8pWiF+0WV1/KNN/stfAhPx0K2VfUCd+lOV
-# 9gS2U0AjG2xbWurmLGSyyxHGrYVSOQDBcClafpiLUyQTU+qpm4Xeesao+ZEC+lPf
-# lOmhmOVN5tbeToNjD7yO3gj54jMoiqFZdF51j5Gfj0fAQgw3Izbf8Xdf22aXtAFJ
-# 10FY4Ie6+XIowrjyH5ICQ/6BMLOpxhloFSxV4v54vt89QD12VFBTeo25jC7h3iwj
-# mC/pD/mi+AyXUFgXPAvEbLx0Tg==
+# hkiG9w0BCQQxFgQUw2UA/yoTfBA1QNs5+pfCIehveGEwDQYJKoZIhvcNAQEBBQAE
+# ggEAIrivR4mL+JXYKBgnRpNbn+VeuqpqfTcmIo3vps88f8etrzImdJllcbc7sR94
+# /34zavl2bO4UtUTv3vgUKoiBTuAoUGzp4aXJl0GLtJSh07TAeOJjICc6OhkeE1DI
+# uzMOiOEKG3vttZl/TttHICdW70dWlmqIWDCGHPhEPiNEM9aPJofBkiUBh22oCdov
+# ZzL8PsLiPMkQZ03eFRzikn/4DbNstAwAAuXLXhdHMBpkYFNGsR7mmH7Bt8WjFVxQ
+# lWmD2+INai9Hae/xq9Y5mAQ7CyT5y4YvWAm05bLKgjOC70A6LFubWrc8M5iwr3Y/
+# xtLfCBMdQb4ZsD7u7dJTqVgDeA==
 # SIG # End signature block
