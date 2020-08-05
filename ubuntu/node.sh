@@ -1,27 +1,24 @@
-#echo "Dependencies for Node"
+#!/bin/bash
 
-echo "Installing NVM"
-sudo wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+echo "Installing Node"
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
-echo "Refresh Profile"
-source $HOME/.bashrc
-
-echo "Installing Node V12.18.3"
-nvm install v12.18.3
-
-echo "Checking Node Installation"
-nvm current
-node --version
-npm --version
+echo "Check Node Installation"
+node -v
+npm -v
 
 echo "Install Packages"
-npm install -g http-server
-npm install -g nodemon
-npm install -g yarn
+sudo npm install -g http-server
+sudo npm install -g nodemon
+sudo npm install -g yarn
+
+echo "Npm Update Check"
+sudo chown -R $USER:$(id -gn $USER) /home/saulo/.config
 
 echo "Checking Global Packages"
 npm list -g --depth 0
 
-#echo "Enable NPM Completion"
-#npm completion >> ~/.bashrc
-#source ~/.bashrc
+echo "Enable NPM Completion"
+npm completion >> ~/.bashrc
+source ~/.bashrc

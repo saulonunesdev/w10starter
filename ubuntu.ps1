@@ -16,8 +16,8 @@ wslconfig.exe /s Ubuntu-18.04
 echo "Checking Ubuntu WSL"
 wsl -l -v
 
-echo "Ubuntu Apps Installation Script"
-wsl ./ubuntu/start.sh
+#echo "Ubuntu Apps Installation Script"
+#wsl ./ubuntu/start.sh
 
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
