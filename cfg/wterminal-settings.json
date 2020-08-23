@@ -1,0 +1,137 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "launchMode": "maximized",
+  "defaultProfile": "{00000000-0000-0000-ba54-000000000002}",
+  "copyOnSelect": true,
+  "copyFormatting": true,
+  "tabWidthMode": "compact",
+  "profiles": {
+    "defaults": {
+      // Put settings here that you want to apply to all profiles.
+    },
+    "list": [
+      {
+        "guid": "{00000000-0000-0000-ba54-000000000002}",
+        "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+        "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+        "name": "Bash",
+        "hidden": false,
+        "startingDirectory": "C:\\Projects\\"
+      },
+      {
+        "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+        "hidden": false,
+        "name": "Ubuntu-18.04",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "//wsl$/Ubuntu-18.04/home/saulo"
+      },
+      {
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name": "Windows PowerShell",
+        "commandline": "powershell.exe",
+        "hidden": false,
+        "startingDirectory": "C:\\Projects\\"
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "Prompt de comando",
+        "commandline": "cmd.exe",
+        "hidden": false,
+        "startingDirectory": "C:\\Projects\\"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      }
+    ]
+  },
+  "schemes": [],
+  "keybindings": [
+    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+    { "command": "paste", "keys": "ctrl+v" },
+    { "command": "newTab", "keys": "ctrl+t" },
+    { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+1" },
+    { "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+2" },
+    { "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+3" },
+    { "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+4" },
+    { "command": { "action": "newTab", "index": 4 }, "keys": "ctrl+5" },
+    { "command": "closeTab", "keys": "ctrl+w" },
+    { "command": "find", "keys": "ctrl+f" },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "vertical",
+        "splitMode": "duplicate",
+        "startingDirectory": "."
+      },
+      "keys": "ctrl+d"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "horizontal",
+        "splitMode": "duplicate"
+      },
+      "keys": "ctrl+s"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "profile": "{00000000-0000-0000-ba54-000000000002}"
+      },
+      "keys": "ctrl+shift+1"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "profile": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}"
+      },
+      "keys": "ctrl+shift+2"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
+      },
+      "keys": "ctrl+shift+3"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "profile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}"
+      },
+      "keys": "ctrl+shift+4"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "profile": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}"
+      },
+      "keys": "ctrl+shift+5"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "down" },
+      "keys": "alt+s"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "left" },
+      "keys": "alt+a"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "right" },
+      "keys": "alt+d"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "up" },
+      "keys": "alt+w"
+    },
+    { "command": "closePane", "keys": "ctrl+a" }
+  ]
+}
