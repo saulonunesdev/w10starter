@@ -12,7 +12,7 @@ echo "Update Distro"
 sudo apt-get update
 
 echo "Installing Dependencies"
-sudo apt-get install -y zip unzip elinks make g++ build-essential
+sudo apt-get install -y zip unzip elinks make g++ build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
 
 $PWD/ubuntu/git.sh "$gitwsl_username" $gitwsl_useremail
 $PWD/ubuntu/aws.sh

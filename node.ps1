@@ -14,6 +14,10 @@ echo "Checking Node Version"
 node --version
 npm --version
 
+echo "Install Npm Completion"
+Install-Module -Name npm-completion -Force
+Add-Content $profile -value "Import-Module npm-completion"
+
 #npm install --global --production windows-build-tools
 #npm config set msvs_version 2015 --global
 #npm config set python python2.7
@@ -37,8 +41,8 @@ npm --version
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4tSU7QSTERs3y/gpNoSPZ3bK
-# okKgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUcjbMA678EAmbVSCCeJVwoOFw
+# LO2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -58,11 +62,11 @@ npm --version
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQU+MdfgfbDTm+04Rk7zVgFpwDMTscwDQYJKoZIhvcNAQEBBQAE
-# ggEALhu9NhlypD+whOW3Drdy6gtvMXfTkHoL7wqjgB64Ix0KX8xRC3fk/iIo7XC6
-# /lHeABXYY279IJAvWIe4z7s26e0NoMf/U8XuJdWtCriDC/Rf9dtTGlj+oTy9pCCO
-# +fOHpPhyobbQybTdAgsbyI+P2R4f7ObkYMEoAPraUQpmvLDwQAxPMcmax5KfMMCz
-# UR7HHUAKuDqyaRdK8mLx7y0Y+xh8FQIEkkj7xj4zvhIaMSJy4vC2PZSIlSXGRzKw
-# 1mzNJ9zE++MQhWV1QHbV7ERWSI3HMdJe9Fi7jDte8CYC6tjkYqtvW+pd6iOJqPtX
-# jCCGbzHLZwFTk/JzNI7DZUTRjg==
+# hkiG9w0BCQQxFgQUQtp2EGXfEQHeOgQcN/kqo9scQhkwDQYJKoZIhvcNAQEBBQAE
+# ggEAIHYnZ/aeOk0FG1F19vjsTjOuJMEwMOUP9AGoRdquyO/WqbIWGJ7RdnAF158O
+# GWFz/KHFLX6rUXg56cjOHIlZFE6k5W8IMrry+eLK9ZY5tpVWhgxkXXCcE+SMfWXk
+# 4OxU0SH1Llv6KS6JaxfYJhOwImtFzhKov/EdThWsoFXzHbpOgtzq+TB6IMvXDIzF
+# sZw2/7t3IaNUPUyz9APhO36leqm0ByPr9IR//B76BJ/GHBhEnGHyq/SbZck2mV34
+# w4TpED2OrRegih3QMaVy6Q3Pje9rNcYFXcqAbh/SYbP2c80Thg4wB0LPalPsmAdE
+# dKBKY+QZAciKtC3CjCc8nQwE+Q==
 # SIG # End signature block

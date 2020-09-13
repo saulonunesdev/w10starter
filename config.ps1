@@ -6,6 +6,12 @@ echo "Show Files Extension"
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x0 /f
 reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt
 
+echo "Creating a New Powershell Profile File"
+New-Item -ItemType File $profile -Force
+
+echo "Install Nuget"
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+
 #echo "Downloading Fonts for ZSH in PowerShell"
 #wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf -OutFile Meslol20Reg.ttf
 #wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf -OutFile Meslol20Bold.ttf
@@ -31,8 +37,8 @@ Start-Service ssh-agent
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUUj0GKRP2zfWlSlKOiBiYl8CJ
-# Pn+gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdmuEnPhaYX+LkHdDS5wCjugI
+# TlmgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -52,11 +58,11 @@ Start-Service ssh-agent
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUig85K6G8EvPHM8uPEcTERn9wJ1gwDQYJKoZIhvcNAQEBBQAE
-# ggEAEzeLMIb2vAB5fP70zL6pE2q/iyaxBO6Feyr6bMgLynAOG7qZHfGcv1Xrlfn6
-# xHkYN3iv8QFfnNfkhI6FJfea7/b86XO6fpIL2igTdWCT0iwyeQwfyRPAixYemxlC
-# f3mdj1i5Cj3acMoaqT5IxXaFYYb4erUdCUOxlUcQItIsBvVQI0n9hXuAl3mjq7ba
-# 6k5NVf44FrRk75EHmzsfkDu1a/Apyz3MnaGaFCv9qjKd6JkIaH2oc+Eteh4nI68w
-# 050StB32sGNR8uyVcbRI+3rqJrR3lACGwKN9/Nn31Hos3eaJAQ7wrLhUKx7uQcwb
-# 0JD1ElCo8FW46U/zL3MIC+d4TA==
+# hkiG9w0BCQQxFgQUfKuMo7gdGlFRf1mbmt+O+pQJPH8wDQYJKoZIhvcNAQEBBQAE
+# ggEAUe94OSp11p+eD4bPFq0NWCsd1tBDOtPzbqh4KFh9xyQRBNy44e/7AGv9p0cM
+# reWqbpaKKTMLJHvW6npTzd2QZKvTZd5kN0aYPz6vVllQnR1hvC9jlYu8UkCobxte
+# 44uvHkRCQtKJ/1yE5S1ZIX67TYXISp8SWUbgz2gY+yv/tJtcT8NfV8b9xu2vYZnG
+# T2ZEte53X80qGmF3bELXCLDAwvQqWFf1TUCfMM2F8q2b2hg8xl/Enjj+Jw5+YDWy
+# 8ZP3z2RJpXkJ1e1pn8zwDWxJbVpLduqTICIFPsko5Jai2BYsFxY+24duSe2ZEr7d
+# /lX/eypREiruPPwpWpgT/fvjFQ==
 # SIG # End signature block
