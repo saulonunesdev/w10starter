@@ -2,7 +2,6 @@
 choco install microsoft-edge -y
 choco install googlechrome -y
 choco install firefox -y
-#choco install foxitreader -y
 choco install winrar -y
 #choco install qbittorrent -y
 choco install vlc -y
@@ -20,22 +19,16 @@ choco install putty.install -y
 choco install notepadplusplus.install -y
 choco install dbeaver -y
 choco install postman -y
-choco install hyper -y
-#choco install vcxsrv -y
-#choco install xming -y
+choco install microsoft-windows-terminal -y
 
 echo "Installation Node Version Manager"
 choco install -y nvm
 
-echo "Refresh PowerShell Environment Variables"
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-refreshenv
-
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU132C4BYmM4294b1lZkcySjuh
-# teGgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU7BT4foX++DPyuXRb0pxaIrm3
+# GnGgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -55,11 +48,11 @@ refreshenv
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQU93KC4lobgMgDtzML0OJiZ5GJAn8wDQYJKoZIhvcNAQEBBQAE
-# ggEAqvbMVKugF4XmGR3kcQnbZCNr9tGQda1+e1OIJn1a9fUXFetsz+R8vaYT6I3h
-# v4rx7emmQ3MqUGr8h4u38Hi5RYQt+cPRQX6rib9tRqW4gg5qZGw7PrI1BxsLn2yp
-# UzJJ/xykI+pyyCQUPnBA65Z3dXbKAs7ISNbiX28XIvBWrK9R8b1j2lv1xQeMhkls
-# BO5Z0IpRl0cLVzjfgtczJcaZvserBOaDxiz1moc3gGDCqhjf78YqNoohqa6MvHEQ
-# /1un/NhZ1vF7eSrgH6WZlrI88Q/8kvLC4yX7PIgpc0jK48gvLJJmdY8yLRBpeg7B
-# D0Kk24RyqdfgUrO2kDFjTPqlww==
+# hkiG9w0BCQQxFgQUFL40DXMrNDOx++9exj9eH+j+8BQwDQYJKoZIhvcNAQEBBQAE
+# ggEAHQLnhtujvajDkSRwFjhutnqpuOPhchUUv4xIQ9zflnxIDbPTosr0aF7fk9m6
+# TShetRTt2UzhxSJJLWdyIsa/pG3WEYEMBrvXplijstcRqq35Tixi11FyIgK8Aobq
+# VDQlhwjJ1H+a+0Ycg7DUn82NQrQccNnLC5VahIm63BXhmWTPR5KjjeyqDxCR9u1b
+# 87F5JOsps0Ib4DI3+hjCU85gNIk4wgP/aMsYAfSVIsuIuvVztre/y4uHMcoPxVlH
+# fA3ypjsgEI/ZdbfY6rcx1+m03/AQykqePGTY+BHe8fx9ENKryhMPeQW5QIxrD/Eh
+# WADgYxVoIJvVhYUdHk/1BaIlcQ==
 # SIG # End signature block

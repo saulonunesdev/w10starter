@@ -1,7 +1,7 @@
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "launchMode": "maximized",
-  "defaultProfile": "{00000000-0000-0000-ba54-000000000002}",
+  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
   "copyOnSelect": true,
   "copyFormatting": true,
   "tabWidthMode": "compact",
@@ -11,10 +11,9 @@
     },
     "list": [
       {
-        "guid": "{00000000-0000-0000-ba54-000000000002}",
-        "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
-        "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
-        "name": "Bash",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name": "Windows PowerShell",
+        "commandline": "powershell.exe",
         "hidden": false,
         "startingDirectory": "C:\\Projects\\"
       },
@@ -26,9 +25,10 @@
         "startingDirectory": "//wsl$/Ubuntu-18.04/home/saulo"
       },
       {
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "name": "Windows PowerShell",
-        "commandline": "powershell.exe",
+        "guid": "{00000000-0000-0000-ba54-000000000002}",
+        "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+        "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+        "name": "Bash",
         "hidden": false,
         "startingDirectory": "C:\\Projects\\"
       },
@@ -80,7 +80,7 @@
       "command": {
         "action": "splitPane",
         "split": "auto",
-        "profile": "{00000000-0000-0000-ba54-000000000002}"
+        "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
       },
       "keys": "ctrl+shift+1"
     },
@@ -96,7 +96,7 @@
       "command": {
         "action": "splitPane",
         "split": "auto",
-        "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
+        "profile": "{00000000-0000-0000-ba54-000000000002}"
       },
       "keys": "ctrl+shift+3"
     },

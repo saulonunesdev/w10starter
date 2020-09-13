@@ -124,6 +124,10 @@ If ("y","yes" -contains $gitssh) {
 echo "Starting Programs Script"
 powershell -File ".\programs.ps1"
 
+echo "Refresh PowerShell Environment Variables"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
+
 echo "Starting Node Script"
 powershell -File ".\node.ps1"
 
@@ -163,12 +167,11 @@ If ("y","yes" -contains $docker) {
   echo "Starting Docker Script"
   powershell -File ".\docker.ps1"
 }
-
 # SIG # Begin signature block
 # MIIFfwYJKoZIhvcNAQcCoIIFcDCCBWwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUd+A6NscEyp3H3cYPHwcIYWF8
-# 0+2gggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUT9iOeeq3L19DFJjEefRUNjlQ
+# z6qgggMUMIIDEDCCAfigAwIBAgIQEt8fR2Y16oVNsrl51ayDBTANBgkqhkiG9w0B
 # AQUFADAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGluay5jb20uYnIwHhcNMjAwMjI0
 # MTE1NjMyWhcNMjUwMjI0MTIwNjMyWjAgMR4wHAYDVQQDDBVzYXVsb0BwYXJhbGlu
 # ay5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCug49TZp8m
@@ -188,11 +191,11 @@ If ("y","yes" -contains $docker) {
 # BAMMFXNhdWxvQHBhcmFsaW5rLmNvbS5icgIQEt8fR2Y16oVNsrl51ayDBTAJBgUr
 # DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
 # DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
-# hkiG9w0BCQQxFgQUbiaAF/huEuuZ1gRWgqL96N39IbswDQYJKoZIhvcNAQEBBQAE
-# ggEAOFPO0PUIBncNCpGlev/efTOSJ++hur/K7NSfMwbWNl5EMOwIfof5FF5//Xcq
-# bZkO2j4l0xkQlhswMlthcdFEnucEQYj1RW4mU850+KsyrANXoa06QRjuC274v7m+
-# x12yYSCAeOoxiVs033CReg0EQzGUzBGsNRGsH7IGbkooFsmapulG7a8q+M3RSMgb
-# Ua0RhM1p4FQEyN3+MB7ZUs/N4IEp3DfazVMGzhi2Cca/+3ydkripBjF1+NyGJunI
-# XUhA+654CjDxYCeJy9GFixfOgRjY+qes7kejqEM7NVPP8+5LI6j+Ov9595eOTpRN
-# sPo4P6Cu+WUoNaCw5aW9W96dsQ==
+# hkiG9w0BCQQxFgQUEoTdmFhf+9Zw4ourOCkBYxk+OXQwDQYJKoZIhvcNAQEBBQAE
+# ggEAM28XviCgaL3zRtnVeXdpE4dy0dJTgZ/htf8Ep143J7tZcTOa7M3rcd4+oIP/
+# Olk48h7YLvar3AI/Fyu/Q2ZQJYD/2AYIg7YelxMyo4QcCD4sUoyb/1l1KLzPKa+w
+# hdqdS87q0s7Pb0ZBH11WRdfQgeoqwU1bN594lwzLqKAXnXXQpmX3FmnyZz2si7tz
+# xwEihDspVDoyp3ezNhfTqtXIxyV5Qcz3oWfBDDJFfomz9IVpRKmtJ8kobvTk9X0T
+# Vfb2yeLMibFwJGA122ite8oDdbpGXtKjcjA2M4NEMczksys1ZNCPFaZSBmcKjjdQ
+# VZCFELUE0jahSFwXOfmNdFyT1w==
 # SIG # End signature block
