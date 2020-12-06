@@ -17,6 +17,7 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension usernamehw.errorlens
 code --install-extension wix.vscode-import-cost
 code --install-extension oderwat.indent-rainbow
+code --install-extension drewbourne.vscode-remark-lint
 echo "VSCode MarkDown Extensions"
 code --install-extension bierner.markdown-preview-github-styles
 echo "VSCode Themes Extensions"

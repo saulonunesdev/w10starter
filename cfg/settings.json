@@ -34,7 +34,6 @@
     "suppressLineUncommittedWarning": true
   },
   "scm.alwaysShowActions": true,
-  "scm.alwaysShowProviders": true,
   "scm.defaultViewMode": "tree",
   "workbench.editor.highlightModifiedTabs": true,
   "window.customMenuBarAltFocus": false,
