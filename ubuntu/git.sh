@@ -21,6 +21,7 @@ git config --global user.name $username
 git config --get user.name
 git config --global user.email $email
 git config --get user.email
+git config --global core.editor "vim"
 
 echo "Git Config to Avoid Showing Files Change Between Windows and WSL"
 git config --global core.filemode false
